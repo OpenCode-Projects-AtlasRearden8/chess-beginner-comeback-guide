@@ -1,0 +1,174 @@
+/* Chess Beginner Comeback Guide — shared stylesheet */
+
+:root {
+  --paper: #faf6ef;
+  --ink: #2d2a26;
+  --faded: #6b645c;
+  --wood: #8a5a33;
+  --wood-dark: #5f3d21;
+  --cream: #fffdf8;
+  --line: #e4dccd;
+  --accent: #3e6b4f;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 18px/1.7 Georgia, "Times New Roman", serif;
+}
+
+.wrap {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 4rem;
+}
+
+.masthead {
+  border-bottom: 3px double var(--line);
+  padding-bottom: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.kicker {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--wood);
+  margin: 0 0 0.35rem;
+}
+
+.masthead h1,
+.masthead h2 {
+  font-family: "Palatino Linotype", Palatino, Georgia, serif;
+  margin: 0 0 0.4rem;
+  color: var(--wood-dark);
+  line-height: 1.25;
+}
+
+.masthead .summary {
+  font-style: italic;
+  color: var(--faded);
+  margin: 0;
+}
+
+h1, h2, h3 { font-family: "Palatino Linotype", Palatino, Georgia, serif; color: var(--wood-dark); }
+
+h2 { margin-top: 2.6em; line-height: 1.3; }
+
+p, li { max-width: 62ch; }
+
+a { color: var(--accent); text-decoration-color: rgba(62, 107, 79, 0.35); text-underline-offset: 2px; }
+a:hover { color: var(--wood-dark); }
+
+code {
+  font-size: 0.88em;
+  background: #efe7d7;
+  border: 1px solid #e0d5bf;
+  border-radius: 3px;
+  padding: 0.06em 0.35em;
+  white-space: nowrap;
+}
+
+blockquote {
+  margin: 1.6em 0;
+  padding: 0.7em 1.1em;
+  background: var(--cream);
+  border-left: 4px solid var(--wood);
+  font-style: italic;
+}
+blockquote p { margin: 0.3em 0; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5em 0;
+  font-size: 0.95rem;
+}
+
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.45em 0.7em;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #f1e8d8;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
+tbody tr:nth-child(even) td { background: #f6f1e6; }
+
+li.todo::marker { content: ""; }
+li.todo { list-style: none; margin-left: -1.2em; }
+li.todo::before { content: "\2610\00a0\00a0"; color: var(--wood); font-size: 1.1em; }
+
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 0.85rem;
+  margin-bottom: 1.6rem;
+}
+
+.topnav a { text-decoration: none; }
+.topnav a:hover { text-decoration: underline; }
+
+.pagenav {
+  margin-top: 3.5rem;
+  padding-top: 1.2rem;
+  border-top: 3px double var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 0.9rem;
+}
+.pagenav .label { display: block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faded); margin-bottom: 0.15rem; }
+.pagenav .next { text-align: right; }
+
+.chapter-list { list-style: none; padding: 0; margin: 2rem 0; }
+.chapter-list li {
+  border-top: 1px solid var(--line);
+  padding: 1.1rem 0.2rem;
+}
+.chapter-list li:last-child { border-bottom: 1px solid var(--line); }
+.chapter-list .cnum {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wood);
+}
+.chapter-list .ctitle { font-size: 1.18rem; }
+.chapter-list .csummary { color: var(--faded); font-style: italic; font-size: 0.95rem; margin: 0.2rem 0 0; }
+
+.paths { margin: 1.8rem 0; }
+.paths h2 { margin-top: 1.8em; }
+
+.sitefooter {
+  margin-top: 3rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 0.8rem;
+  color: var(--faded);
+}
+
+.manual .chapter h1 { border-bottom: 1px solid var(--line); padding-bottom: 0.3rem; }
+.manual .chapter { page-break-before: always; }
+.manual .chapter:first-of-type { page-break-before: avoid; }
+
+@media print {
+  body { background: #fff; font-size: 12pt; }
+  .sitefooter, .topnav, .pagenav { display: none; }
+  .wrap { max-width: none; padding: 0; }
+}
